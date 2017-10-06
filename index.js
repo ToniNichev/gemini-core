@@ -2,15 +2,15 @@
 
 if(typeof global.conf == 'undefined') {
 	// load global config before anything else since modules rely on it
-	global.conf = require('gemini/configurator.js');
+	global.conf = require('gemini-core/configurator.js');
 	global.registry = {} // create registry for all shared resourses
-	global.registry.logger = require('gemini/utils/logger');
+	global.registry.logger = require('gemini-core/utils/logger');
 }
 
 var _cfg = global.conf
 
 const app = require('express')();
-const routes = require('gemini/routes');
+const routes = require('gemini-core/routes');
 
 routes.setupRoutes()
 
